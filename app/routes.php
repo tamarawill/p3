@@ -13,5 +13,16 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home');
 });
+
+Route::get('/loremipsum', function()
+{
+	return View::make('loremipsum');
+});
+
+Route::get('/makeusers', function()
+{
+	return View::make('makeusers');
+});
+
