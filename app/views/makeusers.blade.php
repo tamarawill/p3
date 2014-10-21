@@ -5,6 +5,15 @@
 @stop
 
 @section('content')
-	<h1>Here are some paper people</h1>
-	<p>User generator goes here!</p>
+
+    <h2>{{$faker->name}}</h2>
+    <p>Email: {{$faker->email}}</p>
+    <p>Address: {{$faker->address}}</p>
+    <p>Text: {{$faker->text}}</p>
+
+    <h2>{{$faker->name}}</h2>
+    <p>Email: {{$faker->email}}</p>
+    <p>Address: {{$faker->address}}</p>
+    <p>Text: {{$faker->text}}</p>
+
 @stop

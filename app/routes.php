@@ -23,6 +23,8 @@ Route::get('/loremipsum', function()
 
 Route::get('/makeusers', function()
 {
-	return View::make('makeusers');
+    $faker = Faker\Factory::create();
+    return View::make('makeusers')
+        ->with('faker', $faker);
 });
 

@@ -5,9 +5,8 @@
 @stop
 
 @section('content')
-	<h1>Sample Elvish Words</h1>
-	@foreach (Elvish::getWords(10) as $word)
-		<p>{{$word}}</p>
+	@foreach (Elvish::getParagraphs(3) as $paragraph)
+		<p>{{$paragraph}}</p>
 	@endforeach
 
 @stop
