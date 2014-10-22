@@ -7,7 +7,8 @@
 		"laravel/framework": "4.2.*",
 		"badcow/lorem-ipsum": "dev-master",
 		"stevenmaguire/elvish-ipsum": "dev-master",
-        "fzaninotto/faker": "1.5.*@dev"
+        "fzaninotto/faker": "1.5.*@dev",
+        "paste/pre": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
