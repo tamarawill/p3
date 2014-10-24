@@ -16,9 +16,29 @@ Route::get('/', function()
 	return View::make('home');
 });
 
-Route::get('/loremipsum', function()
+Route::any('/loremipsum', function()
 {
-	return View::make('loremipsum');
+    $data = Input::all();
+    $qty = 5;
+    $outofrangeerr = FALSE;
+
+    if (array_key_exists('qty', $data)){
+        if ( (int)$data['qty'] < 1 ||
+            (int)$data['qty'] > 50 ) {
+            $outofrangeerr = TRUE;
+        } else {
+            $qty = $data['qty'];
+        }
+    }
+
+    $generator = new Badcow\LoremIpsum\Generator();
+    $paragraphs = $generator->getParagraphs($qty);
+
+    //echo Pre::render($paragraphs, 'Users'); //debug
+
+    return View::make('loremipsum')
+        ->with('paragraphs', $paragraphs)
+        ->with('outofrangeerr', $outofrangeerr);
 });
 
 Route::any('/makeusers', function()

@@ -25,4 +25,10 @@
         @endforeach
     @endif
 
+
+    @section('footer')
+        <p>This page users <a href="https://packagist.org/packages/fzaninotto/faker" target="_blank"> fzaninotto's Faker package.</a></p>
+    @stop
+
+
 @stop

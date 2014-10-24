@@ -1,9 +1,13 @@
 @extends('_master')
 
 @section('title')
-	Home
+	Developer's Best Friend
 @stop
 
 @section('content')
-	<p>Here is a home page!</p>
+
+    <h2>Tools:</h2>
+    <p><a href="/loremipsum">Dummy Text Generator</a></p>
+    <p><a href="/makeusers">Test User Generator</a></p>
+
 @stop
