@@ -6,7 +6,7 @@
 
 **Github Repository**: <https://github.com/tamarawill/p3>
 
-**Demo**: 
+**Demo**: <http://screencast.com/t/hYZmIglnHF>
 
 ## Description:
 
