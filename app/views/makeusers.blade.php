@@ -6,16 +6,25 @@
 
 @section('content')
 
-    <h2>Make some more users:</h2>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Make some more users!</h3>
+      </div>
+      <div class="panel-body">
 
-    {{ Form::open(array('url' => '/makeusers')) }}
-        {{ Form::label('qty', 'Number of Users to Generate') }}
-        {{ Form::text('qty', '5') }}
-        {{ Form::submit('Make Users') }}
-    {{ Form::close() }}
+        {{ Form::open(array('url' => '/makeusers', 'role' => 'form')) }}
+            <div class="form-group">
+                {{ Form::label('qty', 'Number of Users to Generate (1-100)') }}
+                {{ Form::text('qty', '5') }}
+            </div>
+            {{ Form::submit('Make Users') }}
+        {{ Form::close() }}
+
+      </div>
+    </div>
 
     @if ($outofrangeerr == TRUE)
-        <p><strong>Your number was too high, too low, or not a number. Enter a whole number between 1 and 100.</strong></p>
+        <p class="bg-danger errorbox">Your number was too high, too low, or not a number. Enter a whole number between 1 and 100.</p>
     @else
         @foreach($users as $user)
             <h2>{{$user['name']}}</h2>
@@ -25,10 +34,8 @@
         @endforeach
     @endif
 
+@stop
 
-    @section('footer')
-        <p>This page users <a href="https://packagist.org/packages/fzaninotto/faker" target="_blank"> fzaninotto's Faker package.</a></p>
-    @stop
-
-
+@section('footer')
+    <p>This page users <a href="https://packagist.org/packages/fzaninotto/faker" target="_blank"> fzaninotto's Faker package.</a></p>
 @stop

@@ -6,16 +6,26 @@
 
 @section('content')
 
-    <h2>Make some more text:</h2>
 
-    {{ Form::open(array('url' => '/loremipsum')) }}
-        {{ Form::label('qty', 'Number of Paragraphs to Generate') }}
-        {{ Form::text('qty', '5') }}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Make some more text!</h3>
+      </div>
+      <div class="panel-body">
+
+    {{ Form::open(array('url' => '/loremipsum', 'role' => 'form')) }}
+        <div class="form-group">
+            {{ Form::label('qty', 'Number of Paragraphs to Generate (1-50)') }}
+            {{ Form::text('qty', '5') }}
+        </div>
         {{ Form::submit('Make Text') }}
     {{ Form::close() }}
 
+      </div>
+    </div>
+
     @if ($outofrangeerr == TRUE)
-        <p><strong>Your number was too high, too low, or not a number. Enter a whole number between 1 and 50.</strong></p>
+        <p class="bg-danger errorbox">Your number was too high, too low, or not a number. Enter a whole number between 1 and 50.</p>
     @else
 
         <h2>Here's Some Text:</h2>
@@ -26,8 +36,8 @@
 
     @endif
 
-    @section('footer')
-        <p>This page users <a href="https://packagist.org/packages/badcow/lorem-ipsum" target="_blank">Badcow's Lorem Ipsum Generator package.</a></p>
-    @stop
+@stop
 
+@section('footer')
+    <p>This page users <a href="https://packagist.org/packages/badcow/lorem-ipsum" target="_blank">Badcow's Lorem Ipsum Generator package.</a></p>
 @stop
